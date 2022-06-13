@@ -1,0 +1,9 @@
+Here is the github repo used for the course to copy code if needed: https://github.com/ajtowf/styling-applications-with-angular-material
+
+===== COMMAND USED IN PROJECT =====
+ - Install flex layout: npm i -s @angular/flex-layout
+
+ 
+ 
+ 
+ 
