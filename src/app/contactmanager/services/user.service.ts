@@ -5,7 +5,6 @@ import { User } from '../models/user';
 
 @Injectable()
 export class UserService {
-
   private _users: BehaviorSubject<User[]>;
 
   private dataStore: {
@@ -21,8 +20,10 @@ export class UserService {
     return this._users.asObservable();
   }
 
-  userById(id: number){
-    return this.dataStore.users.find(x =>x.id === id);
+  userById(id: number) {
+    const listofusers = this.dataStore.users;
+    const value = this.dataStore.users.find((x) => +x.id === +id);
+    return value;
   }
 
   loadAll() {
