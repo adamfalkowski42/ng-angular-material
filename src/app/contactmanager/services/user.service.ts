@@ -37,4 +37,14 @@ export class UserService {
       complete: () => console.log('complete'),
     });
   }
+
+  addUser(user: User): Promise<User>{
+    return new Promise((resolver, reject)=>{
+      user.id= this.dataStore.users.length +1;
+      this.dataStore.users.push(user);
+      this._users.next(Object.assign({},this.dataStore).users);
+      resolver(user);
+    })
+
+  }
 }

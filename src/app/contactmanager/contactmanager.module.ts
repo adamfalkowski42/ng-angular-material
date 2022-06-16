@@ -1,6 +1,6 @@
 import { UserService } from './services/user.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContactmanagerAppComponent } from './contactmanager-app.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
@@ -20,7 +20,7 @@ const routes: Routes = [
     component: ContactmanagerAppComponent,
     children: [
       { path: ':id', component: MainContentComponent },
-      { path: '', component: MainContentComponent }
+      { path: '', component: MainContentComponent },
     ],
   },
   { path: '**', redirectTo: '' },
@@ -43,6 +43,6 @@ const routes: Routes = [
     FlexLayoutModule,
     RouterModule.forChild(routes),
   ],
-  providers:[UserService]
+  providers: [UserService],
 })
 export class ContactmanagerModule {}
